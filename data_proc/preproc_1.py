@@ -185,7 +185,7 @@ for filename in sorted(filenames):
     
     fea = open('feature.csv','wb')
     csv_writer=csv.writer(fea)
-    csv_writer.writerow(['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'])
+    #csv_writer.writerow(['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'])
         
     for i in range(csv_df.shape[0]):
         if re.match(r"\A\d+\.\d+\.\d+\.\d+", csv_df[i]):
