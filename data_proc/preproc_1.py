@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import re
+import gc
 
 import sys
 import csv
@@ -193,10 +194,10 @@ for filename in sorted(filenames):
             continue
         
         f=SVM_get_feature(csv_df[i])
-        print(f)
+        # print(f)
         csv_writer.writerow(f)
-
+    print("over")
     fea.close()
-
+    gc.collect();
     
     print(csv_df.shape[0])
