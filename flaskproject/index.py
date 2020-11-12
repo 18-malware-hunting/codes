@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 import json
 import os
@@ -14,6 +14,15 @@ def index():
     # 参数1: 模板名称  参数n: 传到模板里的数据
     return render_template('hello.html',
                            my_dict=my_dict)
+
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+
+   if request.method == 'POST':
+      result = request.form
+      r="ok"
+      return render_template("result.html",result = result,r=r)
+
 
 
 if __name__ == '__main__':
