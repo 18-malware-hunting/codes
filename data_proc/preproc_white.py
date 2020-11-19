@@ -194,9 +194,9 @@ for filename in (filenames):
         
         try:
             f=SVM_get_feature(csv_df[i])
-        except Exception,e:
+        except Exception as e:
             print(e)
-        print(f)
+        #print(f)
         f.append(1)
         csv_writer.writerow(f)
 

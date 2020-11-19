@@ -198,7 +198,7 @@ for filename in (filenames):
         except Exception as e:
             print(e)
         
-        print(f)
+        #print(f)
         f.append(0)
         csv_writer.writerow(f)
     
