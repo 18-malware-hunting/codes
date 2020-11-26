@@ -228,12 +228,12 @@ def SVM_get_feature(url):
 
 exclude = set(['__pycache__'])
 f=[]
-for root, dirs, filenames in os.walk(os.path.join(os.path.expanduser("~"), "%s" % "mytest".lower()), topdown=True):
+for root, dirs, filenames in os.walk(os.path.join(os.path.expanduser("~"), "%s" % "whitelist".lower()), topdown=True):
     dirs[:] = [d for d in dirs if d not in exclude]
     print(filenames)
     print(root)
 for filename in (filenames):
-    csv_data = pd.read_csv(root + '/' + filename, names=["addr", "type", "source"])
+    csv_data = pd.read_csv(root + '/' + filename, names=["id","addr"])
     csv_df = pd.DataFrame(csv_data)
     csv_df = csv_df["addr"]
     csv_df.drop_duplicates(inplace=True)
@@ -259,7 +259,7 @@ for filename in (filenames):
             print(e)
         
         #print(f)
-        f.append(0)
+        f.append(1)
         csv_writer.writerow(f)
 
     fea.close()
