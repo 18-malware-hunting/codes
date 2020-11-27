@@ -5,7 +5,7 @@ import os
 
 
 # path=os.path.join(os.path.expanduser("~"), "%s" % "libsvm/libsvm-3.24/python".lower())
-path=os.path.join(os.path.expanduser("~"), "%s" % "/static/libsvm/python".lower())
+path=os.path.join(os.path.expanduser("~"), "%s" % "static/libsvm/python".lower())
 sys.path.append(path)
 from preproc_3 import SVM_get_feature
 from svmutil import *
