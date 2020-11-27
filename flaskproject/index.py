@@ -64,4 +64,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run(host="39.105.177.36",debug=False)
+    app.run(host="0.0.0.0",debug=False)
