@@ -32,9 +32,23 @@ if __name__ == '__main__':
     # 对服务器发来的数据进行解码保存到变量recv_content中
     recv_content = recv_data.decode(encoding="utf-8")
     print("接收客户端的数据为:", recv_content)
-
+    url = recv_content
+    f = SVM_get_feature(url)
+    f = scale("range.txt", f)
+    l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+         31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+    predict_pixel = [dict(zip(l, f))]
+    p_label, p_acc, p_val = svm_predict(practical_label, predict_pixel, model, '-b 1');
+    if p_label[0] == 1:
+        r = "Safe"
+        p = p_val[0][0]
+        send_data = ("safe   "+"possiblity"+p).encode(encoding="utf-8")
+    else:
+        r = "risk"
+        p = p_val[0][1]
+        send_data = ("risk   " + "possiblity" + p).encode(encoding="utf-8")
     # 准备要发送给服务器的数据
-    send_data = "好的，消息已收到".encode(encoding="utf-8")
+
 
     # 发送数据给客户端
     tcp_client.send(send_data)
