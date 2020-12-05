@@ -30,6 +30,11 @@ with open(os.path.join(os.path.join(os.path.expanduser("~"), "%s" % "anadata".lo
     data_dict = json.load(load_f)
 app = Flask(__name__)
 
+#打开文件data2.json
+with open(os.path.join(os.path.join(os.path.expanduser("~"), "%s" % "anadata".lower()),"data2.json"),'r') as load_f:
+    data_dict2 = json.load(load_f)
+app = Flask(__name__)
+
 @app.route('/')
 def index():
     my_dict = data_dict
@@ -37,7 +42,7 @@ def index():
     # render_template方法:渲染模板
     # 参数1: 模板名称  参数n: 传到模板里的数据
     return render_template('hello.html',
-                           my_dict=my_dict)
+                           my_dict=my_dict,my_dict2=my_dict2)
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
