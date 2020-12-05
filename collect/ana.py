@@ -4,7 +4,7 @@ import json
 
 data_dict = {'data': [], 'datetime': []}
 
-data_dict2 = {'src':[], 'data':[]}#新增了一个字典统计来源
+data_dict2 = {'data': [], 'source': []}#新增了一个字典统计来源
 
 exclude = set(['__pycache__'])
 for root,dirs,filenames in os.walk(os.path.join(os.path.expanduser("~"), "%s" % "mytest".lower()),topdown=True):
