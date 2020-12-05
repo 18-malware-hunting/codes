@@ -44,6 +44,27 @@ var myChart = echarts.init(document.getElementById("box"));
 
 </script>
 
+<script>
+var myChart = echarts.init(document.getElementById("box"));
+		myChart.setOption({
+            //图标题
+			title:{text: '情报来源'},
+
+			//图属性
+			series:[
+				{
+					name:'数量',
+					type:'pie',//图类型：柱状图
+					//color:['#3398DB'],//设置图像颜色
+					data:{{ my_dict2 }}//图表的数值
+				}
+			]
+		});
+
+		
+				
+
+</script>
 
 <form action="http://39.105.177.36:5000/result"" method="POST">
      <p>Name <input type = "text" name = "Name" /></p>
