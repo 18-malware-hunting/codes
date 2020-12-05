@@ -31,11 +31,11 @@ for filename in sorted(filenames):
     csv_df.drop_duplicates(inplace=True)
     print(csv_df.shape[0])
 
-    csv.df = csv_df.groupby('source').size()#按来源分组并计数
+    csv_df = csv_df.groupby('source').size()#按来源分组并计数
     csv_df = csv_df.reset_index()#添加索引
     for i in range(csv_df.shape[0]):
-        data_dict["src"].append(csv_df.iloc[i,0])
-        data_dict["data"].append(csv_df.iloc[i,1])
+        data_dict2["source"].append(csv_df.iloc[i,0])
+        data_dict2["data"].append(float(csv_df.iloc[i,1]))
 
 with open(os.path.join(os.path.join(os.path.expanduser("~"), "%s" % "anadata".lower()),"data2.json"),'w') as dump_f:
-    json.dump(data_dict,dump_f)
+    json.dump(data_dict2,dump_f)
