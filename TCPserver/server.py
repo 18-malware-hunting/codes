@@ -53,11 +53,11 @@ if __name__ == '__main__':
     if p_label[0] == 1:
         r = "Safe"
         p = p_val[0][0]
-        send_data = ("safe   "+"possiblity"+p).encode(encoding="utf-8")
+        send_data = ("safe   "+"possiblity"+str(p)).encode(encoding="utf-8")
     else:
         r = "risk"
         p = p_val[0][1]
-        send_data = ("risk   " + "possiblity" + p).encode(encoding="utf-8")
+        send_data = ("risk   " + "possiblity" + str(p)).encode(encoding="utf-8")
     # 准备要发送给服务器的数据
 
 
