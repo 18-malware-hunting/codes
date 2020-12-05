@@ -1,6 +1,17 @@
 # 导入socket模块
 import socket
+import sys
+import os
+path=os.path.join(os.path.expanduser("~"), "%s" % "static/libsvm/python".lower())
+sys.path.append(path)
+from preproc_3 import SVM_get_feature
+from svmutil import *
+from scale import scale
 
+model= svm_load_model("model");
+#
+# url="baidu.com"
+practical_label=[0]
 if __name__ == '__main__':
     # 创建tcp服务端套接字
     # 参数同客户端配置一致，这里不再重复
