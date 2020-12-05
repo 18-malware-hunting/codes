@@ -38,7 +38,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     my_dict = data_dict
-
+    my_dict2 = data_dict2
     # render_template方法:渲染模板
     # 参数1: 模板名称  参数n: 传到模板里的数据
     return render_template('hello.html',
