@@ -42,4 +42,4 @@ for filename in sorted(filenames):
 
 
 with open(os.path.join(os.path.join(os.path.expanduser("~"), "%s" % "anadata".lower()),"data2.json"),'w') as dump_f:
-    json.dump(data_dict2,dump_f)
+    json.dump(data_2,dump_f)
