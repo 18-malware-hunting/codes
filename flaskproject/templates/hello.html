@@ -45,7 +45,7 @@ var myChart = echarts.init(document.getElementById("box"));
 </script>
 
 <script>
-var myChart = echarts.init(document.getElementById("box"));
+var myChart = echarts.init(document.getElementById("box2"));
 		myChart.setOption({
             //图标题
 			title:{text: '情报来源'},
@@ -54,7 +54,7 @@ var myChart = echarts.init(document.getElementById("box"));
 			series:[
 				{
 					name:'数量',
-					type:'pie',//图类型：柱状图
+					type:'pie',//图类型：饼图
 					//color:['#3398DB'],//设置图像颜色
 					data:{{ my_dict2 }}//图表的数值
 				}
