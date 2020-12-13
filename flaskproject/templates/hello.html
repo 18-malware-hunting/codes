@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>折线图</title>
+    <title>NK18-malware hunting</title>
     <script src="{{ url_for('static', filename = 'echarts.min.js') }}"></script>
     <script src="{{ url_for('static', filename = 'jquery-3.5.1.js') }}"></script>
 </head>
 <body>
+
+<form action="http://39.105.177.36:5000/result"" method="POST">
+     <p>Name <input type = "text" name = "Name" /></p>
+     <p><input type = "submit" value = "submit" /></p>
+  </form>
+
 <!--为echarts准备一个容器，画图就画在里面-->
 <div id="box" style="width: 600px;height: 600px;"></div>
 
@@ -45,8 +51,8 @@ var myChart = echarts.init(document.getElementById("box"));
 </script>
 
 <script>
-var myChart = echarts.init(document.getElementById("box2"));
-		myChart.setOption({
+var myChart2 = echarts.init(document.getElementById("box2"));
+		myChart2.setOption({
             //图标题
 			title:{text: '情报来源'},
 
@@ -65,11 +71,6 @@ var myChart = echarts.init(document.getElementById("box2"));
 				
 
 </script>
-
-<form action="http://39.105.177.36:5000/result"" method="POST">
-     <p>Name <input type = "text" name = "Name" /></p>
-     <p><input type = "submit" value = "submit" /></p>
-  </form>
 
 
 </body>
